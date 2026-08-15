@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Pythonプログラム・ツール一覧</title>
-    <!-- 1. テーマのCSS（Okaidiaテーマ：渋いダーク調） -->
-    <link rel="stylesheet" href="https://cloudflare.com" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSP5Eqwcdq74f5WO1Jc6SGg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
             background-color: #F4F1EA;
@@ -17,17 +15,11 @@
         }
         .back-link { margin-bottom: 20px; display: inline-block; color: #D97724; text-decoration: none; }
         .back-link:hover { text-decoration: underline; }
+        h1 { border-bottom: 2px solid #3C4A3E; padding-bottom: 10px; font-size: 1.8rem; }.title-icon { width: 32px; height: 32px; }
+        h2 { border-left: 5px solid #D97724; padding-left: 10px; margin-top: 40px; font-size: 1.3rem; }
+        p { margin: 15px 0; }
         
-        h1 { 
-            border-bottom: 2px solid #3C4A3E; 
-            padding-bottom: 10px; 
-            font-size: 1.8rem;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .title-icon { width: 32px; height: 32px; }
-
+        /* カード型レイアウト（プログラム個別紹介） */
         .code-card {
             background: #fff;
             padding: 25px;
@@ -35,104 +27,73 @@
             margin: 25px 0;
             box-shadow: 0 2px 5px rgba(0,0,0,0.03);
         }
-        .card-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border-bottom: 1px dashed #ddd;
-            padding-bottom: 8px;
-            margin-bottom: 15px;
-        }
-        .card-header h3 { margin: 0; color: #3C4A3E; font-size: 1.2rem; }
+        .code-card h3 { margin-top: 0; color: #3C4A3E; font-size: 1.2rem; border-bottom: 1px dashed #ddd; padding-bottom: 8px; }
         .card-icon { width: 22px; height: 22px; }
-
         .tag { display: inline-block; background: #F4F1EA; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 5px; color: #D97724; }
         
-        /* 枠線の微調整 */
-        pre[class*="language-"] {
+        /* コードブロック */
+        pre {
+            background-color: #2D3732;
+            color: #E2E8F0;
+            padding: 20px;
             border-radius: 6px;
-            margin: 20px 0 0 0;
-            font-size: 0.95rem;
+            overflow-x: auto;
+            font-family: monospace;
+            font-size: 0.9rem;
         }
-
-        footer {
-            margin-top: 60px;
-            text-align: center;
-            font-size: 0.8rem;
-            color: #7A857C;
-            border-top: 1px solid #D1CFC8;
-            padding-top: 15px;
-        }
-        footer a { color: #D97724; text-decoration: none; }
-        footer a:hover { text-decoration: underline; }
+        code { font-family: monospace; }
     </style>
 </head>
 <body>
 
     <a href="../index.html" class="back-link">&larr; トップページに戻る</a>
 
-    <h1>
-        <img src="https://icons8.com" class="title-icon" alt="PC icon">
-        Pythonプログラム・スクリプト集
-    </h1>
+    <h1>Pythonプログラム・スクリプト集</h1>
     <p>業務効率化の自動化ツールや、数値計算・Salome-Meca連携用のPythonスクリプトを公開しています。</p>
 
-    <!-- 1. ランチャーツール -->
+    <!-- プログラム紹介 1件目 -->
     <div class="code-card">
-        <div class="card-header">
-            <h3><img src="../images/icons/icons8-folder-64.png" class="card-icon" alt="file icon">
-            1. ランチャーツール</h3>
-        </div>
-        <div style="margin-bottom: 10px;">
+        <h3><img src="../images/icons/icons8-folder-64.png" class="card-icon" alt="file icon">
+        1. ランチャーツール</h3>
+        <div>
             <span class="tag">Python</span>
             <span class="tag">ツール・ユーティリティ</span>
         </div>
-        <p>ショートカットURLを登録、起動できるランチャーツールです。タブやグルーピングで整理できます。</p>
-        
-        <pre><code class="language-python">def load_click_counts():
+        <p>ショートカットURLを登録、起動できるランチャーツールです。タブでやグルーピングで整理できます。</p>
+        <pre><code>def load_click_counts():
     try:
         with open(CLICK_COUNT_FILE, 'r', encoding='utf-8') as f:
             return json.load(f)
     except FileNotFoundError:
         return {}
 
-def save_click_counts(click_counts):
-    pass</code></pre>
+def save_click_counts(click_counts):</code></pre>
+    <a href="launcher_3.html" >launcher ver3</a>
     </div>
 
-    <!-- 2. CSVグラフ一覧表示ツール -->
+    <!-- プログラム紹介 2件目 -->
     <div class="code-card">
-        <div class="card-header">
-            <h3><img src="../images/icons/icons8-console-64.png" class="card-icon" alt="file icon">
-            2. CSVグラフ一覧表示ツール</h3>
-        </div>
-        <div style="margin-bottom: 10px;">
+        <h3><img src="../images/icons/icons8-console-64.png" class="card-icon" alt="file icon">
+        2. CSVグラフ一覧表示ツール</h3>
+        <div>
             <span class="tag">Python</span>
             <span class="tag">matplotlib</span>
         </div>
         <p>CSVファイルを読込み、matplotlibでタイル状に折れ線グラフ表示するスクリプトです。</p>
-        
-        <pre><code class="language-python">def prepare_plot_data(values):
+        <pre><code>def prepare_plot_data(values):
     if values is None:
         return values
+
     if isinstance(values, pd.DataFrame):
         if values.shape[1] == 0:
             return pd.Series(dtype="float64")
         values = values.iloc[:, 0]
-    
+        
     series = pd.Series(values)
     if len(series) == 0:
-        return series
-    return series</code></pre>
+        return series</code></pre>
+    <a href="./pj_CSVGraphViewer_ver0.4/main.html" >main</a><br>
     </div>
 
-    <footer>
-        Icons by <a href="https://icons8.com" target="_blank" rel="noopener">Icons8</a>
-    </footer>
-
-    <!-- 2. 本体スクリプトの読み込み（Python対応版を明示的に指定） -->
-    <script src="https://cloudflare.com" integrity="sha512-9khX2m5NIn4gdaBCHYAtscGvE7vscsc4YyC9yS0ZfSmj0O0B9G7Y6YvA61pZonY3gMIGpQ86f7b1R9gY2o8wMw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cloudflare.com" integrity="sha512-Y76vSgW9xS5SdaSAsYisX7XG2uA97M2Rdr7bBIs69vby1Wf669H1R3F0dF6b15F79U6b1D/YmP6P1y69X9c7lw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
-
